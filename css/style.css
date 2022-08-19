@@ -1,6 +1,7 @@
 @font-face {
     font-family: Roboto;
-    src: url(./Roboto/Roboto-Regular.ttf);
+    src: url(./Roboto/Roboto-Regular.ttf)
+        url(./Roboto/Roboto-Bold.ttf);
 }
 
 * {
@@ -152,12 +153,63 @@ a {
 }
 
 
-.logo {
+.logo h1 {
     font-size: 1.5rem;
 }
 
 .main-content {
     background-color: #ccc;
+    
     grid-column: 2;
     grid-row: 2;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+}
+
+
+.projects {
+    padding: 24px;
+    background-color: rgb(230, 230, 230);
+}
+
+.projects h2 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 24px;
+}
+
+.card {
+    background-color: white;
+    padding: 32px 24px 24px;
+    border-left: 8px solid orange;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px lightgray;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+
+.card p {
+    font-weight: 500;
+    color: rgb(95, 95, 95);
+}
+
+.card > div {
+    margin-top: 12px;
+    justify-self: end;
+    align-self: end;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 32px;
+}
+
+.announcements-trending {
+    background-color: aquamarine;
 }
