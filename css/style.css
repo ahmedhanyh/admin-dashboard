@@ -1,7 +1,6 @@
 @font-face {
     font-family: Roboto;
-    src: url(./Roboto/Roboto-Regular.ttf)
-        url(./Roboto/Roboto-Bold.ttf);
+    src: url(./Roboto/Roboto-Regular.ttf);
 }
 
 * {
@@ -27,6 +26,8 @@
 .header {
     padding: 8px 32px;
     background-color: white;
+    box-shadow: 4px 4px 4px lightgray;
+    z-index: 1;
     
     grid-column: 2;
     grid-row: 1;
@@ -158,31 +159,31 @@ a {
 }
 
 .main-content {
-    background-color: #ccc;
+    padding: 24px;
+    background-color: rgb(230, 230, 230);
     
     grid-column: 2;
     grid-row: 2;
 
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 16px;
+    gap: 24px;
 }
 
+h2 {
+    font-size: 1.2rem;
+}
 
 .projects {
-    padding: 24px;
-    background-color: rgb(230, 230, 230);
-}
-
-.projects h2 {
-    margin-bottom: 12px;
-    font-size: 1.2rem;
+    display: grid;
+    align-content: start;
+    gap: 12px;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 250px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 280px;
     gap: 24px;
 }
 
@@ -196,7 +197,9 @@ a {
     grid-template-rows: auto auto 1fr;
 }
 
-.card p {
+.card p,
+.announcement p,
+.trending-box p:last-child {
     font-weight: 500;
     color: rgb(95, 95, 95);
 }
@@ -211,5 +214,63 @@ a {
 }
 
 .announcements-trending {
-    background-color: aquamarine;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-content: start;
+    gap: 48px;
+}
+
+.announcements-box,
+.trending-box {
+    background-color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px lightgray;
+}
+
+.announcement {
+    padding: 24px 0;
+}
+
+.announcement h3 {
+    font-size: 1rem;
+}
+
+.announcement p {
+    font-size: 0.9rem;
+}
+
+.announcement:nth-child(n + 2) {
+    border-top: 1px solid lightgray;
+}
+
+.announcements,
+.trending {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 12px;
+}
+
+.trending-box {
+    padding: 24px 24px;
+    display: grid;
+}
+
+.trending-box > div {
+    display: grid;
+    grid-template-columns: 45px auto;
+    column-gap: 12px;
+}
+
+.trending-box .placeholder-image {
+    grid-row: 1 / 3;
+    align-self: center;
+}
+
+.trending-box p {
+    font-size: 0.9rem;
+}
+
+.trending-box p:first-of-type {
+    align-self: end;
 }
